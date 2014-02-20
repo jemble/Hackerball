@@ -31,7 +31,9 @@ public class BallScript : MonoBehaviour {
 	
 	void FixedUpdate() {
 		rigidbody.velocity = Vector3.ClampMagnitude (rigidbody.velocity, maxSpeed);
-	//	rigidbody.AddForce(v.normalized * move
+	//	rigidbody.AddForce(v.normalized * moveForce);
+
+	//	camera.transform.TransformDirection(v);
 		rigidbody.AddRelativeForce (v.normalized * moveForce);
 
 		if (jump) {

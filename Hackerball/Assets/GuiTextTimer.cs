@@ -2,12 +2,24 @@
 using System.Collections;
 
 public class GuiTextTimer : MonoBehaviour {
-	float Counter = 0;
-	int Seconds;
+	public float counter;
+	public GUIStyle guiStyle = new GUIStyle();
+	public int warningFontSize;
+	int seconds;
 
 	void OnGUI(){
-		Counter += Time.deltaTime;
-		Seconds = (int)Counter % 60;
-		GUI.Box(new Rect(0,0,100,75),Seconds.ToString());
+		GUI.Label(new Rect(0,0,100,75),seconds.ToString(),guiStyle);
 	}
+
+	void Update(){
+		if (counter > 0) {
+			counter -= Time.deltaTime;
+			seconds = (int)counter;
+			if(counter < 10){
+				guiStyle.normal.textColor = new Color(255,0,0);
+				guiStyle.fontSize = warningFontSize;
+			}
+		}
+	}
+	
 }
