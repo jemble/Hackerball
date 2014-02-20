@@ -17,11 +17,14 @@ public class movaCam : MonoBehaviour {
 	float mouseScr;
 	float camRotY;
 
+	Vector3 startPos = new Vector3(-10,20,0);
+	float startYRot = 45;
+
 	// Use this for initialization
 	void Start () {
 		rotPoint = new Vector3 ();
 		rotPoint.y = rotPointY;
-		camRotY = transform.rotation.y;
+		camRotY = transform.eulerAngles.y;
 		//player.transform.Rotate (Vector3.up, camRotY);
 	}
 	
@@ -30,12 +33,12 @@ public class movaCam : MonoBehaviour {
 	}
 
 	void LateUpdate(){
-		rotPointX = player.transform.position.x;
-		rotPointZ = player.transform.position.z;
-		rotPoint.x = rotPointX;
-		rotPoint.z = rotPointZ;
+//		rotPointX = player.transform.position.x;
+//		rotPointZ = player.transform.position.z;
+		rotPoint.x = player.transform.position.x;
+		rotPoint.z = player.transform.position.z;
+
 		mouseX = Input.GetAxis("Mouse X");
-		//mouseY = Input.GetAxis ("Mouse Y");
 		mouseScr = Input.GetAxis ("Mouse ScrollWheel");
 
 		camera.fieldOfView += mouseScr * zoomSpeed;
@@ -43,14 +46,19 @@ public class movaCam : MonoBehaviour {
 		transform.LookAt (rotPoint);
 		transform.RotateAround(rotPoint,Vector3.up,mouseX * upSpeed);
 
-		float camRotY = transform.eulerAngles.y;
+		camRotY = transform.eulerAngles.y;
+
+		//rotate the ball with the camera so that forward key is still forward 
 		player.transform.eulerAngles = new Vector3 (0, camRotY, 0);
 
+//		Debug.Log ("ball rot: "+ player.transform.rotation.y);
+//		Debug.Log ("cam rot: "+transform.rotation.y);
 
-		Debug.Log ("ball rot: "+ player.transform.rotation.y);
-		Debug.Log ("cam rot: "+transform.rotation.y);
-		//transform.RotateAround (rotPoint, Vector3.left, mouseY * leftSpeed);
+	}
 
+	public void ResetPos(){
+		transform.position = startPos;
+		transform.eulerAngles = new Vector3(0,startYRot,0);
 	}
 }
 

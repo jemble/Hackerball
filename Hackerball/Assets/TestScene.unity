@@ -416,7 +416,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 858528486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .382683486, z: 0, w: .923879564}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
@@ -451,6 +451,9 @@ MonoBehaviour:
   moveForce: 4
   maxSpeed: 10
   bounceHeight: 100
+  startPos: {x: 0, y: 2, z: 0}
+  startRot: 0
+  cam: {fileID: 1327256401}
 --- !u!1 &879525813
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +600,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1327256395}
   m_LocalRotation: {x: 0, y: .382683486, z: 0, w: .923879564}
-  m_LocalPosition: {x: -10, y: 10, z: 0}
+  m_LocalPosition: {x: -10, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -8,7 +8,8 @@ public class BallScript : MonoBehaviour {
 	public float bounceHeight = 100f;
 	public Vector3 startPos;
 	public float startRot;
-	
+	public movaCam cam;
+
 	private Vector3 v;
 	private Vector3 bounce;
 
@@ -23,6 +24,7 @@ public class BallScript : MonoBehaviour {
 		v = new Vector3 (Input.GetAxis ("Horizontal"), 0.0f, Input.GetAxis ("Vertical"));
 		if (transform.position.y < -10) {
 			MoveToStart();
+			cam.ResetPos();
 		}
 	
 	}
