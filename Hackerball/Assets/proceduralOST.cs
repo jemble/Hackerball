@@ -5,6 +5,7 @@ public class proceduralOST : MonoBehaviour {
 
 	public int longDuration = 6;
 	public int shortDuration = 4;
+	public int shortVsLongThreshold = 4;
 	private bool repeatShort = true;
 
 	void Start () {
@@ -17,12 +18,12 @@ public class proceduralOST : MonoBehaviour {
 	}
 
 	void pickNewSample(){
-		int longOrShort = UnityEngine.Random.Range (0, 1);
-		if (longOrShort == 0) {
-			StartCoroutine("pickNewShort");
-		}
-		if (longOrShort == 1) {
+		int longOrShort = UnityEngine.Random.Range (0, 6);
+		if (longOrShort <= shortVsLongThreshold) {
 			StartCoroutine("pickNewLong");
+		}
+		else {
+			StartCoroutine("pickNewShort");
 		}
 	}
 

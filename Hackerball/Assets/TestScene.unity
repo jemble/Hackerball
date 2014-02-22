@@ -891,8 +891,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68c899c424bb1243a2ae58daaa3ebe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  longDuration: 6
-  shortDuration: 4
+  longDuration: 8
+  shortDuration: 6
+  shortVsLongThreshold: 2
 --- !u!82 &1327256403
 AudioSource:
   m_ObjectHideFlags: 0
