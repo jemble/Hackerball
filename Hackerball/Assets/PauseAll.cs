@@ -31,7 +31,7 @@ public class PauseAll : MonoBehaviour {
 			isPaused = false;
 		}
 		foreach (GameObject gO in gOs) {
-			gO.SendMessage("setPause",isPaused);
+			gO.SendMessage("setPause",isPaused,SendMessageOptions.DontRequireReceiver);
 		}
 		//guiTextTimer.setPaused(isPaused);
 	}
