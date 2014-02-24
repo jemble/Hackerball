@@ -8,8 +8,7 @@ public class BallScript : MonoBehaviour {
 	public float bounceHeight = 100f;
 	public Vector3 startPos;
 	public float startRot;
-	public movaCam cam;
-
+	public MoveCam cam;
 	private Vector3 v;
 	private Vector3 bounce;
 
@@ -21,25 +20,28 @@ public class BallScript : MonoBehaviour {
 	}
 
 	void Update () {
-		v = new Vector3 (Input.GetAxis ("Horizontal"), 0.0f, Input.GetAxis ("Vertical"));
-		if (transform.position.y < -10) {
-			MoveToStart();
-			cam.ResetPos();
+
+			v = new Vector3 (Input.GetAxis ("Horizontal"), 0.0f, Input.GetAxis ("Vertical"));
+			if (transform.position.y < -10) {
+				MoveToStart ();
+				cam.ResetPos ();
+		
 		}
 	
 	}
 	
 	void FixedUpdate() {
-		rigidbody.velocity = Vector3.ClampMagnitude (rigidbody.velocity, maxSpeed);
-	//	rigidbody.AddForce(v.normalized * moveForce);
 
-	//	camera.transform.TransformDirection(v);
-		rigidbody.AddRelativeForce (v.normalized * moveForce);
+			rigidbody.velocity = Vector3.ClampMagnitude (rigidbody.velocity, maxSpeed);
+		//	rigidbody.AddForce(v.normalized * moveForce);
 
-		if (jump) {
-			jump = false;
-			rigidbody.AddForce (bounce);
-		}
+		//	camera.transform.TransformDirection(v);
+			rigidbody.AddRelativeForce (v.normalized * moveForce);
+
+			if (jump) {
+				jump = false;
+				rigidbody.AddForce (bounce);
+			}
 
 	}
 

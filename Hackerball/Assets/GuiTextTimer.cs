@@ -6,9 +6,16 @@ public class GuiTextTimer : MonoBehaviour {
 	public GUIStyle guiStyle = new GUIStyle();
 	public int warningFontSize;
 	int seconds;
+	bool isPaused;
+	public PauseAll pA;
 
 	void OnGUI(){
 		GUI.Label(new Rect(0,0,100,75),seconds.ToString(),guiStyle);
+		if (isPaused) {
+			if (GUI.Button (new Rect (300, 300, 300, 100), "Paused")) {
+				pA.pauseGo ();
+			}
+		}
 	}
 
 	void Update(){
@@ -20,6 +27,11 @@ public class GuiTextTimer : MonoBehaviour {
 				guiStyle.fontSize = warningFontSize;
 			}
 		}
+
+	}
+
+	public void setPause(bool pauseState){
+		isPaused = pauseState;
 	}
 	
 }

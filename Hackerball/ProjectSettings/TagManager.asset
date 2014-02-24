@@ -5,6 +5,7 @@ TagManager:
   tags:
   - platform
   - boost
+  - pausee
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
