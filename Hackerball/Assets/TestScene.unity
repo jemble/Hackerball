@@ -1078,6 +1078,7 @@ MonoBehaviour:
   longDuration: 8
   shortDuration: 6
   shortVsLongThreshold: 2
+  musicVolume: .200000003
 --- !u!82 &1327256403
 AudioSource:
   m_ObjectHideFlags: 0

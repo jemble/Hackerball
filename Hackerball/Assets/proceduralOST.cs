@@ -6,6 +6,7 @@ public class proceduralOST : MonoBehaviour {
 	public int longDuration = 6;
 	public int shortDuration = 4;
 	public int shortVsLongThreshold = 4;
+	public float musicVolume = 0.2f;
 	private bool repeatShort = true;
 
 	void Start () {
@@ -69,7 +70,7 @@ public class proceduralOST : MonoBehaviour {
 				longSample = Resources.Load ("Cm") as AudioClip;
 				break;
 		}
-		AudioSource.PlayClipAtPoint(longSample, transform.position);
+		AudioSource.PlayClipAtPoint(longSample, transform.position, musicVolume);
 		yield return new WaitForSeconds(longDuration);
 		pickNewSample();
 	}
@@ -113,7 +114,7 @@ public class proceduralOST : MonoBehaviour {
 			break;
 		
 		}
-		AudioSource.PlayClipAtPoint(shortSample, transform.position);
+		AudioSource.PlayClipAtPoint(shortSample, transform.position, musicVolume);
 		yield return new WaitForSeconds(shortDuration);
 
 		if (repeatShort) {
