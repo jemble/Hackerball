@@ -16,6 +16,11 @@ public class GuiTextTimer : MonoBehaviour {
 				pA.pauseGo ();
 			}
 		}
+		if(counter < 0){
+			if(GUI.Button(new Rect(Screen.width/2,Screen.height/2,100,100),"Restart")){
+				Application.LoadLevel(Application.loadedLevel);
+			}
+		}
 	}
 
 	void Update(){

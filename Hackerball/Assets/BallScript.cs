@@ -23,8 +23,7 @@ public class BallScript : MonoBehaviour {
 
 			v = new Vector3 (Input.GetAxis ("Horizontal"), 0.0f, Input.GetAxis ("Vertical"));
 			if (transform.position.y < -10) {
-				MoveToStart ();
-				cam.ResetPos ();
+			Application.LoadLevel(Application.loadedLevel);
 		
 		}
 	
