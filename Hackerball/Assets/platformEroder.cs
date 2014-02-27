@@ -24,6 +24,7 @@ public class platformEroder : MonoBehaviour {
 				bounceCounter--;
 				switch (bounceCounter) {
 					case 0:
+					object explode = Instantiate(Resources.Load("ParticleSystem"),transform.position,transform.rotation);
 						Destroy (this.gameObject);
 						break;
 					case 1:

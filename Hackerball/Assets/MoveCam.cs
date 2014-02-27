@@ -5,8 +5,8 @@ public class MoveCam : MonoBehaviour {
 
 	public GameObject player;
 	public float zoomSpeed = 2.0f;
-	public float upSpeed = 2.0f;
-
+	public float turnSpeed = 2.0f;
+	public float verticalSpeed = 0.5f;
 	float rotPointX;
 	float rotPointY = 0.0f;
 	float rotPointZ;
@@ -57,13 +57,24 @@ public class MoveCam : MonoBehaviour {
 			transform.LookAt (rotPoint);
 
 			//rotate around the x and z of the ball using the mouse
-			transform.RotateAround (rotPoint, Vector3.up, mouseX * upSpeed);
+			transform.RotateAround (rotPoint, Vector3.up, mouseX * turnSpeed);
 
 			//get the camera's rotation around y
 			camRotY = transform.eulerAngles.y;
 
 			//rotate the ball with the camera so that forward key is still forward 
 			player.transform.eulerAngles = new Vector3 (0, camRotY, 0);
+
+			if (Input.GetMouseButton(1)){
+				if (rotPoint.y < 10){
+					rotPoint.y = rotPoint.y + verticalSpeed;
+				}
+			}
+			else if (Input.GetMouseButton(0)){
+				if (rotPoint.y > 0){
+					rotPoint.y = rotPoint.y - verticalSpeed;
+				}
+			}
 
 //		Debug.Log ("ball rot: "+ player.transform.rotation.y);
 //		Debug.Log ("cam rot: "+transform.rotation.y);
