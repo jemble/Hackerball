@@ -12,19 +12,13 @@ public class platformEroder : MonoBehaviour {
 		bounceCounter = maxBounces;
 	}
 
-	void Update () {	
-	}
-	
-	void FixedUpdate() {
-	}
-
 	void OnCollisionEnter(Collision collision) {
 		if (smashable) {
 			if (collision.gameObject.tag == "Player") {
 				bounceCounter--;
 				switch (bounceCounter) {
 					case 0:
-					object explode = Instantiate(Resources.Load("ParticleSystem"),transform.position,transform.rotation);
+						object explode = Instantiate(Resources.Load("ParticleSystem"),transform.position,transform.rotation);
 						Destroy (this.gameObject);
 						break;
 					case 1:

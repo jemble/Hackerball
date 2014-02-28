@@ -450,6 +450,10 @@ Prefab:
       propertyPath: maxBounces
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 100000, guid: 705f2ad2ea75f8340be1d0c4c77a2ea9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
   m_RootGameObject: {fileID: 276212087}
