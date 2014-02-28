@@ -3,21 +3,53 @@ using System.Collections;
 
 public class GuiTextTimer : MonoBehaviour {
 	public float counter;
-	public GUIStyle guiStyle = new GUIStyle();
+	public GUIStyle guiStyleTimer = new GUIStyle();
+	public GUIStyle guiStyleMenu = new GUIStyle();
 	public int warningFontSize;
 	int seconds;
 	bool isPaused;
 	public PauseAll pA;
 
+	private GameObject ball;
+
+	private float screenHeight;
+	private float screenXCentre;
+	private float screenYCentre;
+	private float timerBoxHeight;
+	private float timerBoxWidth;
+
+
+	void Start(){
+
+		timerBoxWidth = 300;
+		timerBoxHeight = 100;
+		screenXCentre = Screen.width/2;
+		screenYCentre = Screen.height/2;
+		screenHeight = Screen.height;
+
+		ball = GameObject.FindGameObjectWithTag("Player");
+	}
+
 	void OnGUI(){
-		GUI.Label(new Rect(0,0,100,75),seconds.ToString(),guiStyle);
+		GUI.Label(new Rect(screenXCentre-(timerBoxWidth/2),(screenHeight-timerBoxHeight),timerBoxWidth,timerBoxHeight),seconds.ToString(),guiStyleTimer);
 		if (isPaused) {
-			if (GUI.Button (new Rect (300, 300, 300, 100), "Paused")) {
+			if (GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"continue",guiStyleMenu)) {
 				pA.pauseGo ();
 			}
 		}
 		if(counter < 0){
-			if(GUI.Button(new Rect(Screen.width/2,Screen.height/2,100,100),"Restart")){
+//			Time.timeScale = 0;
+//			gOs = FindObjectsOfType (typeof(GameObject));
+//			foreach(GameObject go in gOs){
+//				Object explode = Instantiate(Resources.Load("ParticleSystem"),go.transform.position,go.transform.rotation);
+//				//Destroy (go.gameObject);
+//			} 
+
+			if(ball != null){
+				Object explode = Instantiate(Resources.Load("ParticleSystem"),ball.transform.position,ball.transform.rotation);
+				Destroy(ball.gameObject);
+			}
+			if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"restart",guiStyleMenu)){
 				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
@@ -28,8 +60,8 @@ public class GuiTextTimer : MonoBehaviour {
 			counter -= Time.deltaTime;
 			seconds = (int)counter;
 			if(counter < 10){
-				guiStyle.normal.textColor = new Color(255,0,0);
-				guiStyle.fontSize = warningFontSize;
+				guiStyleTimer.normal.textColor = new Color(255,0,0);
+				guiStyleTimer.fontSize = warningFontSize;
 			}
 		}
 

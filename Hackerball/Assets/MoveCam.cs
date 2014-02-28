@@ -41,7 +41,7 @@ public class MoveCam : MonoBehaviour {
 
 	//late update used as the camera is following the ball
 	void LateUpdate(){
-		if (!isPaused) {
+		if (!isPaused && player != null) {
 			//get the ball pos
 			rotPoint.x = player.transform.position.x;
 			rotPoint.z = player.transform.position.z;
