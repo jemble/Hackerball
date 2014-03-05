@@ -7,6 +7,7 @@ public class PauseAll : MonoBehaviour {
 	//public GuiTextTimer guiTextTimer;
 	private Object[] gOs;
 
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -15,7 +16,7 @@ public class PauseAll : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKeyDown (pauseKey)) {
-			gOs = FindObjectsOfType (typeof(GameObject));
+			GameState.ChangeState(GameState.State.Paused);
 			pauseGo();
 		}
 	}
@@ -29,9 +30,5 @@ public class PauseAll : MonoBehaviour {
 			Time.timeScale = 1;
 			isPaused = false;
 		}
-		foreach (GameObject gO in gOs) {
-			gO.SendMessage("setPause",isPaused,SendMessageOptions.DontRequireReceiver);
-		}
-		//guiTextTimer.setPaused(isPaused);
 	}
 }

@@ -30,28 +30,44 @@ public class GuiTextTimer : MonoBehaviour {
 		ball = GameObject.FindGameObjectWithTag("Player");
 	}
 
-	void OnGUI(){
+	public void GameRunning(){
 		GUI.Label(new Rect(screenXCentre-(timerBoxWidth/2),(screenHeight-timerBoxHeight),timerBoxWidth,timerBoxHeight),seconds.ToString(),guiStyleTimer);
-		if (isPaused) {
-			if (GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"continue",guiStyleMenu)) {
-				pA.pauseGo ();
-			}
+		if (counter < 0) {
+			GameState.ChangeState(GameState.State.End);
 		}
-		if(counter < 0){
-//			Time.timeScale = 0;
-//			gOs = FindObjectsOfType (typeof(GameObject));
-//			foreach(GameObject go in gOs){
-//				Object explode = Instantiate(Resources.Load("ParticleSystem"),go.transform.position,go.transform.rotation);
-//				//Destroy (go.gameObject);
-//			} 
+	}
 
-			if(ball != null){
-				Object explode = Instantiate(Resources.Load("ParticleSystem"),ball.transform.position,ball.transform.rotation);
-				Destroy(ball.gameObject);
-			}
-			if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"restart",guiStyleMenu)){
-				Application.LoadLevel(Application.loadedLevel);
-			}
+	private void GameEnded(){
+		if(ball != null){
+			Object explode = Instantiate(Resources.Load("ParticleSystem"),ball.transform.position,ball.transform.rotation);
+			Destroy(ball.gameObject);
+		}
+		if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"restart",guiStyleMenu)){
+			Application.LoadLevel(Application.loadedLevel);
+		}
+	}
+
+	public void GamePaused(){
+		Debug.Log ("paused");
+		if (GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"continue",guiStyleMenu)) {
+			GameState.ChangeState(GameState.State.Running);	
+			pA.pauseGo();
+		}
+	}
+
+
+	void OnGUI(){
+		GameState.State gameState = GameState.CurrentState;
+		switch(gameState){
+		case GameState.State.Running:
+			GameRunning();
+			break;
+		case GameState.State.Paused:
+			GamePaused();
+			break;
+		case GameState.State.End:
+			GameEnded();
+			break;
 		}
 	}
 
@@ -66,9 +82,4 @@ public class GuiTextTimer : MonoBehaviour {
 		}
 
 	}
-
-	public void setPause(bool pauseState){
-		isPaused = pauseState;
-	}
-	
 }

@@ -25,9 +25,7 @@ public class MoveCam : MonoBehaviour {
 	//starting pos and rotation of the camera
 	public Vector3 startPos = new Vector3(-10,20,0);
 	public float startYRot = 45;
-
-	private bool isPaused = false;
-
+	
 	// Use this for initialization
 	void Start () {
 		rotPoint = new Vector3 ();
@@ -39,32 +37,31 @@ public class MoveCam : MonoBehaviour {
 	void Update () {
 	}
 
-	//late update used as the camera is following the ball
-	void LateUpdate(){
-		if (!isPaused && player != null) {
+	private void GameRunning(){
+		if (player != null) {
 			//get the ball pos
 			rotPoint.x = player.transform.position.x;
 			rotPoint.z = player.transform.position.z;
-
+			
 			//get the mouse pos and scroll amount
 			mouseX = Input.GetAxis ("Mouse X");
 			mouseScr = Input.GetAxis ("Mouse ScrollWheel");
-
+			
 			//zoom the field of view based on the scroll
 			camera.fieldOfView += mouseScr * zoomSpeed;
-
+			
 			//point the camera at the x and z of the ball
 			transform.LookAt (rotPoint);
-
+			
 			//rotate around the x and z of the ball using the mouse
 			transform.RotateAround (rotPoint, Vector3.up, mouseX * turnSpeed);
-
+			
 			//get the camera's rotation around y
 			camRotY = transform.eulerAngles.y;
-
+			
 			//rotate the ball with the camera so that forward key is still forward 
 			player.transform.eulerAngles = new Vector3 (0, camRotY, 0);
-
+			
 			if (Input.GetMouseButton(1)){
 				if (rotPoint.y < 10){
 					rotPoint.y = rotPoint.y + verticalSpeed;
@@ -75,22 +72,25 @@ public class MoveCam : MonoBehaviour {
 					rotPoint.y = rotPoint.y - verticalSpeed;
 				}
 			}
-
-//		Debug.Log ("ball rot: "+ player.transform.rotation.y);
-//		Debug.Log ("cam rot: "+transform.rotation.y);
-
+			
+			//		Debug.Log ("ball rot: "+ player.transform.rotation.y);
+			//		Debug.Log ("cam rot: "+transform.rotation.y);
+			
 		}
 	}
 
-	public void setPause(bool pauseState)
-	{
-		isPaused = pauseState;
-	}
-	
-	//used when the ball falls off the edge. Called by BallScript
-	public void ResetPos(){
-		transform.position = startPos;
-		transform.eulerAngles = new Vector3(0,startYRot,0);
+	//late update used as the camera is following the ball
+	void LateUpdate(){
+		GameState.State gameState = GameState.CurrentState;
+		switch(gameState){
+		case GameState.State.Running:
+			GameRunning();
+			break;
+		case GameState.State.Paused:
+			break;
+		case GameState.State.End:
+			break;
+		}
 	}
 }
 
