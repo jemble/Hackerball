@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameState : MonoBehaviour {
 
-	public enum State {Paused, Running, End};
+	public enum State {Paused, Running, End, Winning, Won};
 	public static State CurrentState;
 
 	public static void ChangeState(State state){

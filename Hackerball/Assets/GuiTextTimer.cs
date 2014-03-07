@@ -47,6 +47,16 @@ public class GuiTextTimer : MonoBehaviour {
 		}
 	}
 
+	public void GameWon(){
+		if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"You Win - restart",guiStyleMenu)){
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
+	}
+	public void GameWinning(){
+
+	}
+
 	public void GamePaused(){
 		Debug.Log ("paused");
 		if (GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"continue",guiStyleMenu)) {
@@ -64,6 +74,13 @@ public class GuiTextTimer : MonoBehaviour {
 			break;
 		case GameState.State.Paused:
 			GamePaused();
+			break;
+		case GameState.State.Winning:
+			GameRunning();
+			GameWinning ();
+			break;
+		case GameState.State.Won:
+			GameWon();
 			break;
 		case GameState.State.End:
 			GameEnded();

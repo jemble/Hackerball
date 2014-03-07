@@ -13,7 +13,7 @@ public class BallScript : MonoBehaviour
 		private Vector3 v;
 		private Vector3 bounce;
 		private bool jump = false;
-
+	
 		// Use this for initialization
 		void Start ()
 		{
@@ -50,6 +50,13 @@ public class BallScript : MonoBehaviour
 		{
 				if (collision.gameObject.tag == "boost") {
 						jump = true;
+				}
+				else if (collision.gameObject.tag == "checkpoint") {
+						GameState.ChangeState(GameState.State.Winning);
+						Debug.Log("checkpoint");
+				}
+				else if((collision.gameObject.tag == "start") && (GameState.CurrentState == GameState.State.Winning)){
+						GameState.ChangeState(GameState.State.Won);
 				}
 		}
 

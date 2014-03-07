@@ -86,6 +86,9 @@ public class MoveCam : MonoBehaviour {
 		case GameState.State.Running:
 			GameRunning();
 			break;
+		case GameState.State.Winning:
+			GameRunning();
+			break;
 		case GameState.State.Paused:
 			break;
 		case GameState.State.End:
