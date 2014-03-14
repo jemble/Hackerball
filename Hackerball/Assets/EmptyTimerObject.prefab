@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c84bb150e368244822bbc33ef444e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 90
+  counter: 1000
   guiStyleTimer:
     m_Name: 
     m_Normal:

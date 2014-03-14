@@ -46,17 +46,24 @@ public class BallScript : MonoBehaviour
 
 		}
 
+
+
 		void OnCollisionEnter (Collision collision)
 		{
-				if (collision.gameObject.tag == "boost") {
-						jump = true;
-				}
-				else if (collision.gameObject.tag == "checkpoint") {
-						GameState.ChangeState(GameState.State.Winning);
+		if (collision.gameObject.tag == "boost") {
+			jump = true;
+			}
+			else if (collision.gameObject.tag == "checkpoint") {
+				GameState.ChangeState(GameState.State.Winning);
 						Debug.Log("checkpoint");
-				}
-				else if((collision.gameObject.tag == "start") && (GameState.CurrentState == GameState.State.Winning)){
+			}
+			else if (collision.gameObject.tag == "start"){
+					jump = true;
+			Debug.Log("start");
+			jump=true;
+					if (GameState.CurrentState == GameState.State.Winning) {
 						GameState.ChangeState(GameState.State.Won);
+					}
 				}
 		}
 
