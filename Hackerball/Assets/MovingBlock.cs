@@ -19,21 +19,21 @@ public class MovingBlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (xMovement == true) {
-			posX = Mathf.PingPong (Time.time, xDistance);
+			posX = Mathf.PingPong (Time.time, xDistance) + startPos.x;
 		}
 		else {
 			posX = transform.position.x;
 		}
 
 		if (yMovement == true) {
-			posY = Mathf.PingPong (Time.time, yDistance);
+			posY = Mathf.PingPong (Time.time, yDistance) + startPos.y;
 		}
 		else {
 			posY = transform.position.y;
 		}
 
 		if (zMovement == true) {
-			posZ = Mathf.PingPong (Time.time, zDistance);
+			posZ = Mathf.PingPong (Time.time, zDistance) + startPos.y;
 		}
 		else {
 			posZ = transform.position.z;
