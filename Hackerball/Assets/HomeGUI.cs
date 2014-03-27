@@ -21,6 +21,7 @@ public class HomeGUI : MonoBehaviour {
 		if(GUI.Button(new Rect((screenWidth-resetWidth),10,resetWidth,resetHeight),"reset progress",guiStyle)){
 			CurrentLevel.ResetLevels();
 			CurrentLevel.InitLevels();
+			Application.LoadLevel("OpeningScene");
 		}
 	}
 }

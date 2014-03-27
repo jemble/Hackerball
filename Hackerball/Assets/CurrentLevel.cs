@@ -29,6 +29,7 @@ public class CurrentLevel : MonoBehaviour {
 		
 		GameObject[] levelBeams = GameObject.FindGameObjectsWithTag("levelBeam");
 		foreach (GameObject beam in levelBeams) {
+			Debug.Log("beam found");
 			goToLevel goTo = beam.GetComponent<goToLevel>();
 			if(goTo.level != level) {
 				Destroy(beam);
