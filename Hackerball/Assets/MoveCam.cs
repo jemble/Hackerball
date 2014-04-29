@@ -61,15 +61,22 @@ public class MoveCam : MonoBehaviour {
 			
 			//rotate the ball with the camera so that forward key is still forward 
 			player.transform.eulerAngles = new Vector3 (0, camRotY, 0);
-			
+
+			//get the camera's position
+			Vector3 camPos = transform.position;
+
 			if (Input.GetMouseButton(1)){
 				if (rotPoint.y < 10){
 					rotPoint.y = rotPoint.y + verticalSpeed;
+					camPos.y = camPos.y + verticalSpeed;
+					transform.position = camPos;
 				}
 			}
 			else if (Input.GetMouseButton(0)){
 				if (rotPoint.y > 0){
 					rotPoint.y = rotPoint.y - verticalSpeed;
+					camPos.y = camPos.y - verticalSpeed;
+					transform.position = camPos;
 				}
 			}
 			
