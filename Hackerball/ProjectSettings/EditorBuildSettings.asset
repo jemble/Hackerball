@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scenes/OpeningScene.unity
+    path: Assets/Resources/scenes/OpeningScene.unity
   - enabled: 1
-    path: Assets/scenes/Level1.unity
+    path: Assets/Resources/scenes/Level1.unity
   - enabled: 1
-    path: Assets/scenes/EasyLevel.unity
+    path: Assets/Resources/scenes/EasyLevel.unity
   - enabled: 1
-    path: Assets/scenes/BigLevel.unity
+    path: Assets/Resources/scenes/BigLevel.unity
   - enabled: 1
-    path: Assets/scenes/EasyLevel2.unity
+    path: Assets/Resources/scenes/EasyLevel2.unity
   - enabled: 1
-    path: Assets/scenes/mediumLevel.unity
+    path: Assets/Resources/scenes/mediumLevel.unity
   - enabled: 1
-    path: Assets/scenes/JemLevelEasy.unity
+    path: Assets/Resources/scenes/JemLevelEasy.unity

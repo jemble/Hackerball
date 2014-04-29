@@ -2,13 +2,21 @@
 using System.Collections;
 
 public class GuiTextTimer : MonoBehaviour {
+
+	public static readonly string SCORE_KEY = "SCORE_KEY";
+
 	public float counter;
 	public GUIStyle guiStyleTimer = new GUIStyle();
 	public GUIStyle guiStyleMenu = new GUIStyle();
+	public GUIStyle guiStyleScore = new GUIStyle();
+
 	public int warningFontSize;
 	int seconds;
+	private int startTime;
 	bool isPaused;
 	public PauseAll pA;
+	private int bestTime = 0;
+	public int level;
 
 	private GameObject ball;
 
@@ -20,13 +28,16 @@ public class GuiTextTimer : MonoBehaviour {
 
 
 	void Start(){
-
+		startTime = seconds;
 		timerBoxWidth = 300;
 		timerBoxHeight = 100;
 		screenXCentre = Screen.width/2;
 		screenYCentre = Screen.height/2;
 		screenHeight = Screen.height;
-
+		if(PlayerPrefs.HasKey(SCORE_KEY+level.ToString())){
+			bestTime = PlayerPrefs.GetInt(SCORE_KEY+level.ToString());
+			Debug.Log(bestTime);
+		}
 		ball = GameObject.FindGameObjectWithTag("Player");
 	}
 
@@ -35,6 +46,7 @@ public class GuiTextTimer : MonoBehaviour {
 		if (counter < 0) {
 			GameState.ChangeState(GameState.State.End);
 		}
+		GUI.Label(new Rect(0,0,timerBoxWidth,timerBoxHeight),"best: "+bestTime.ToString(),guiStyleTimer);
 	}
 
 	private void GameEnded(){
@@ -51,6 +63,7 @@ public class GuiTextTimer : MonoBehaviour {
 		if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"You Win - restart",guiStyleMenu)){
 			Application.LoadLevel(Application.loadedLevel);
 		}
+		PlayerPrefs.SetInt(SCORE_KEY+level.ToString(),(startTime-seconds));
 
 	}
 	public void GameWinning(){

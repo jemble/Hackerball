@@ -19,7 +19,7 @@ public class CurrentLevel : MonoBehaviour {
 	}
 
 	public static void InitLevels(){
-		if(PlayerPrefs.HasKey("level")) {
+		if(PlayerPrefs.HasKey("level"+level.ToString())) {
 			level = PlayerPrefs.GetInt("level");
 		} else {
 			ResetLevels ();
