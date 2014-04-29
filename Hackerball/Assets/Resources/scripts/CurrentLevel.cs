@@ -14,12 +14,13 @@ public class CurrentLevel : MonoBehaviour {
 	}
 
 	public static void ResetLevels(){
+		PlayerPrefs.DeleteAll();
 		PlayerPrefs.SetInt("level",0);
 		level = 0;
 	}
 
 	public static void InitLevels(){
-		if(PlayerPrefs.HasKey("level"+level.ToString())) {
+		if(PlayerPrefs.HasKey("level")) {
 			level = PlayerPrefs.GetInt("level");
 		} else {
 			ResetLevels ();

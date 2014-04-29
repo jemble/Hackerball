@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &64860615
 Renderer:
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &64916944
 Renderer:
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &157488048
 Renderer:
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &202286844
 Renderer:
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &205039035
 Renderer:
@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &228398992
 Renderer:
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &230354768
 Renderer:
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &233414613
 Renderer:
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &266698940
 Renderer:
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &325937352
 Renderer:
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &331709468
 Renderer:
@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &345091567
 Renderer:
@@ -2142,6 +2142,10 @@ Prefab:
       propertyPath: counter
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 914693f77ee284e4ba47e85adf46ef5c, type: 2}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 914693f77ee284e4ba47e85adf46ef5c, type: 2}
   m_RootGameObject: {fileID: 1099255002}
@@ -2366,7 +2370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &581684004
 Renderer:
@@ -2697,7 +2701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &669104875
 Renderer:
@@ -2940,7 +2944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &765942255
 Renderer:
@@ -3027,7 +3031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &801466357
 Renderer:
@@ -3186,7 +3190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &846151202
 Renderer:
@@ -3552,7 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &968402580
 Renderer:
@@ -3919,7 +3923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1074231927
 Renderer:
@@ -4003,6 +4007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c84bb150e368244822bbc33ef444e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
   counter: 30
   guiStyleTimer:
     m_Name: 
@@ -4113,6 +4118,65 @@ MonoBehaviour:
     m_FontSize: 36
     m_FontStyle: 0
     m_Alignment: 4
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  guiStyleScore:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
     m_WordWrap: 0
     m_RichText: 1
     m_TextClipping: 0
@@ -4366,7 +4430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1178349170
 Renderer:
@@ -4804,7 +4868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1315699533
 Renderer:
@@ -5143,7 +5207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1357491587
 Renderer:
@@ -5310,7 +5374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1377005240
 Renderer:
@@ -5705,7 +5769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1597162131
 Renderer:
@@ -5836,7 +5900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1637248738
 Renderer:
@@ -6937,7 +7001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 1
+  smashable: 0
   maxBounces: 9
 --- !u!23 &1969174155
 Renderer:

@@ -66,10 +66,11 @@ public class BallScript : MonoBehaviour
 //			}
 			else if (collision.gameObject.tag == "start"){
 					jump = true;
-			Debug.Log("start");
+//			Debug.Log("start");
 			jump=true;
 					if (GameState.CurrentState == GameState.State.Winning) {
 						GameState.ChangeState(GameState.State.Won);
+						Debug.Log (PlayerPrefs.GetInt("level"));
 						PlayerPrefs.SetInt ("level", PlayerPrefs.GetInt ("level")+1);
 						Application.LoadLevel ("OpeningScene");
 

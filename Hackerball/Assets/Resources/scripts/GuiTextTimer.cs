@@ -3,7 +3,11 @@ using System.Collections;
 
 public class GuiTextTimer : MonoBehaviour {
 
-	public static readonly string SCORE_KEY = "SCORE_KEY";
+	//used to set PlayerPrefs best score
+	private string SCORE_KEY = "SCORE_KEY";
+
+	//used to set playerprefs
+	public int level;
 
 	public float counter;
 	public GUIStyle guiStyleTimer = new GUIStyle();
@@ -12,11 +16,11 @@ public class GuiTextTimer : MonoBehaviour {
 
 	public int warningFontSize;
 	int seconds;
-	private int startTime;
+	private float startTime;
 	bool isPaused;
 	public PauseAll pA;
 	private int bestTime = 0;
-	public int level;
+
 
 	private GameObject ball;
 
@@ -28,14 +32,18 @@ public class GuiTextTimer : MonoBehaviour {
 
 
 	void Start(){
-		startTime = seconds;
+		startTime = counter;
 		timerBoxWidth = 300;
 		timerBoxHeight = 100;
 		screenXCentre = Screen.width/2;
 		screenYCentre = Screen.height/2;
 		screenHeight = Screen.height;
-		if(PlayerPrefs.HasKey(SCORE_KEY+level.ToString())){
-			bestTime = PlayerPrefs.GetInt(SCORE_KEY+level.ToString());
+
+		SCORE_KEY = SCORE_KEY+level.ToString();
+
+		Debug.Log(SCORE_KEY);
+		if(PlayerPrefs.HasKey(SCORE_KEY)){
+			bestTime = PlayerPrefs.GetInt(SCORE_KEY);
 			Debug.Log(bestTime);
 		}
 		ball = GameObject.FindGameObjectWithTag("Player");
@@ -46,7 +54,7 @@ public class GuiTextTimer : MonoBehaviour {
 		if (counter < 0) {
 			GameState.ChangeState(GameState.State.End);
 		}
-		GUI.Label(new Rect(0,0,timerBoxWidth,timerBoxHeight),"best: "+bestTime.ToString(),guiStyleTimer);
+		GUI.Label(new Rect(0,screenHeight-timerBoxHeight,timerBoxWidth,timerBoxHeight),"best: "+bestTime.ToString(),guiStyleTimer);
 	}
 
 	private void GameEnded(){
@@ -63,8 +71,12 @@ public class GuiTextTimer : MonoBehaviour {
 		if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"You Win - restart",guiStyleMenu)){
 			Application.LoadLevel(Application.loadedLevel);
 		}
-		PlayerPrefs.SetInt(SCORE_KEY+level.ToString(),(startTime-seconds));
-
+		int curBestTime = (int)(startTime-counter);
+		Debug.Log ("curBestTime: "+curBestTime);
+		if(curBestTime<bestTime || bestTime==0){
+			Debug.Log("setting prefs");
+			PlayerPrefs.SetInt(SCORE_KEY,curBestTime);
+		}
 	}
 	public void GameWinning(){
 
