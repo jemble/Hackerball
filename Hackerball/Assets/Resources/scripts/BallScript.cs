@@ -13,16 +13,21 @@ public class BallScript : MonoBehaviour
 		private Vector3 v;
 		private Vector3 bounce;
 		private bool jump = false;
+		
+		private int progress;
+		public int currentLevel;
 	
 		// Use this for initialization
 		void Start ()
-		{
+		{		
+				progress = PlayerPrefs.GetInt ("level");
+				Debug.Log ("Progress: " + progress);
+				Debug.Log ("CurrentLevel: " + currentLevel);
 				bounce = new Vector3 (0, bounceHeight, 0);
 		}
 
 		void Update ()
 		{
-
 				v = new Vector3 (Input.GetAxis ("Horizontal"), 0.0f, Input.GetAxis ("Vertical"));
 				if (transform.position.y < -10) {
 						Application.LoadLevel (Application.loadedLevel);
@@ -69,11 +74,12 @@ public class BallScript : MonoBehaviour
 //			Debug.Log("start");
 			jump=true;
 					if (GameState.CurrentState == GameState.State.Winning) {
-						GameState.ChangeState(GameState.State.Won);
-						Debug.Log (PlayerPrefs.GetInt("level"));
-						PlayerPrefs.SetInt ("level", PlayerPrefs.GetInt ("level")+1);
-						Application.LoadLevel ("OpeningScene");
-
+						GameState.ChangeState(GameState.State.Won);	
+						if (currentLevel >= progress) {
+							PlayerPrefs.SetInt ("level", progress + 1);
+						}
+						Application.LoadLevel ("LevelSelector");
+						
 					}
 				}
 		}

@@ -68,9 +68,6 @@ public class GuiTextTimer : MonoBehaviour {
 	}
 
 	public void GameWon(){
-		if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"You Win - restart",guiStyleMenu)){
-			Application.LoadLevel(Application.loadedLevel);
-		}
 		int curBestTime = (int)(startTime-counter);
 		Debug.Log ("curBestTime: "+curBestTime);
 		if(curBestTime<bestTime || bestTime==0){
