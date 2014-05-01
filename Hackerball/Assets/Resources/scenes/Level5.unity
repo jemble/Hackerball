@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 0
-  maxBounces: 9
+  smashable: 1
+  maxBounces: 4
 --- !u!23 &45420957
 Renderer:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smashable: 1
-  maxBounces: 9
+  maxBounces: 5
 --- !u!1 &208385346
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +509,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
       propertyPath: maxBounces
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
       propertyPath: explosion
@@ -517,6 +517,10 @@ Prefab:
       objectReference: {fileID: 100000, guid: 705f2ad2ea75f8340be1d0c4c77a2ea9, type: 2}
     - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: smashable
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -609,8 +613,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 0
-  maxBounces: 2
+  smashable: 1
+  maxBounces: 4
 --- !u!1001 &311160735
 Prefab:
   m_ObjectHideFlags: 0
@@ -774,8 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 0
-  maxBounces: 9
+  smashable: 1
+  maxBounces: 4
 --- !u!23 &648699946
 Renderer:
   m_ObjectHideFlags: 0
@@ -941,6 +945,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: smashable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: maxBounces
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
   m_RootGameObject: {fileID: 45420955}
@@ -1056,7 +1068,6 @@ MonoBehaviour:
   startPos: {x: 0, y: 2, z: 0}
   startRot: 0
   cam: {fileID: 1327256401}
-  progress: 1
   currentLevel: 5
 --- !u!114 &858528493
 MonoBehaviour:
@@ -1152,7 +1163,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: maxBounces
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
@@ -1193,6 +1208,10 @@ Prefab:
     - target: {fileID: 400000, guid: 6e3b437454489fc49bf7b810d3c14a6e, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 6e3b437454489fc49bf7b810d3c14a6e, type: 2}
+      propertyPath: maxBounces
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e3b437454489fc49bf7b810d3c14a6e, type: 2}
@@ -1794,6 +1813,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: smashable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: maxBounces
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
   m_RootGameObject: {fileID: 648699944}
@@ -2284,13 +2311,13 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 921614467}
   m_GameObject: {fileID: 1637634333}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   smashable: 1
-  maxBounces: 9
+  maxBounces: 4
 --- !u!23 &1637634335
 Renderer:
   m_ObjectHideFlags: 0
@@ -2383,6 +2410,14 @@ Prefab:
     - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: smashable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
+      propertyPath: maxBounces
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45763f396f6ff42429fec3b491c6c1f2, type: 2}
@@ -2590,8 +2625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7614181e04d146b4e97e7275bd3a48bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smashable: 0
-  maxBounces: 9
+  smashable: 1
+  maxBounces: 4
 --- !u!23 &1992208155
 Renderer:
   m_ObjectHideFlags: 0
