@@ -59,7 +59,7 @@ public class GuiTextTimer : MonoBehaviour {
 
 	private void GameEnded(){
 		if(ball != null){
-			Object explode = Instantiate(Resources.Load("ParticleSystem"),ball.transform.position,ball.transform.rotation);
+			Object explode = Instantiate(Resources.Load("prefabs/ParticleSystem"),ball.transform.position,ball.transform.rotation);
 			Destroy(ball.gameObject);
 		}
 		if(GUI.Button(new Rect(screenXCentre-(timerBoxWidth/2),(screenYCentre-timerBoxHeight),timerBoxWidth,timerBoxHeight),"restart",guiStyleMenu)){

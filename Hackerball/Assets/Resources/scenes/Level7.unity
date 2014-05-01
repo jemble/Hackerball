@@ -1526,7 +1526,7 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   warningFontSize: 92
-  pA: {fileID: 0}
+  pA: {fileID: 1715123148}
 --- !u!4 &1176466333
 Transform:
   m_ObjectHideFlags: 0
@@ -1581,6 +1581,10 @@ Prefab:
       propertyPath: counter
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 914693f77ee284e4ba47e85adf46ef5c, type: 2}
+      propertyPath: pA
+      value: 
+      objectReference: {fileID: 1715123148}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 914693f77ee284e4ba47e85adf46ef5c, type: 2}
   m_RootGameObject: {fileID: 1176466331}
@@ -2286,7 +2290,6 @@ MonoBehaviour:
   startPos: {x: 0, y: 2, z: 0}
   startRot: 0
   cam: {fileID: 0}
-  progress: 1
   currentLevel: 7
 --- !u!54 &1616185316
 Rigidbody:
