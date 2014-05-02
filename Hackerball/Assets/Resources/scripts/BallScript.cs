@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BallScript : MonoBehaviour
 {
-
 		public float moveForce = 4.0f;
 		public float maxSpeed = 10f;
 		public float bounceHeight = 100f;
@@ -27,12 +26,12 @@ public class BallScript : MonoBehaviour
 		}
 
 		void Update ()
-		{
-				v = new Vector3 (Input.GetAxis ("Horizontal"), 0.0f, Input.GetAxis ("Vertical"));
+		{		
+				v = new Vector3 (Input.acceleration.x, 0.0f, Input.acceleration.y);
+
 				if (transform.position.y < -10) {
 						Application.LoadLevel (Application.loadedLevel);
 				}
-	
 		}
 	
 		void FixedUpdate ()
